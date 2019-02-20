@@ -29,7 +29,7 @@
 
     <button id="clicker" class="btn btn-primary">Click me!</button>
 
-    <p id="result">Test</p>
+    <p id="result"></p>
 
   </main>
 
@@ -46,6 +46,25 @@
     console.log('Declare event listeners .......................')
 
     document.getElementById('clicker').addEventListener('click', function () {
+      const s = document.getElementById('courseName').value
+      const i = parseInt(document.getElementById('firstNumber').value)
+      console.log('i=' + i)
+      const sLen = s.length;
+      const ans = 'You have: ' + lengthCourse(sLen, i) + ' characters left.'
+      document.getElementById('result').innerHTML = ans
+    })
+
+    
+    document.getElementById('courseName').addEventListener('keyup', function () {
+      const s = document.getElementById('courseName').value
+      const i = parseInt(document.getElementById('firstNumber').value)
+      console.log('i=' + i)
+      const sLen = s.length;
+      const ans = 'You have: ' + lengthCourse(sLen, i) + ' characters left.'
+      document.getElementById('result').innerHTML = ans
+    })
+
+    document.getElementById('firstNumber').addEventListener('keyup', function () {
       const s = document.getElementById('courseName').value
       const i = parseInt(document.getElementById('firstNumber').value)
       console.log('i=' + i)
