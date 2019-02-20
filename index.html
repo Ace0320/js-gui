@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Interactive App</title>
+  <title>String Checke</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -18,21 +18,18 @@
     <h1>String Checker</h1>
     <h3>Given a course name and max length, display how many characters remaining</h3>
 
-    <p>Enter your name:
-      <input id="guest" type="text" value="Eden">
+    <p>Enter your course:
+      <input id="courseName" type="string" value="Name">
     </p>
 
-    <p>Enter first number:
+    <p>Enter max length:
       <input id="firstNumber" type="number" value="7">
     </p>
 
-    <p>Enter second number:
-      <input id="secondNumber" type="number" value="12">
-    </p>
 
     <button id="clicker" class="btn btn-primary">Click me!</button>
 
-    <p id="result"></p>
+    <p id="result">Test</p>
 
   </main>
 
@@ -41,20 +38,19 @@
 
     console.log('Declare testable functions.....................')
 
-    function add(x, y) {
-      return x + y
+    function lengthCourse(x, y) {
+      return y - x
     }
-    console.log('Defined add=' + add)
+    console.log('Defined add=' + lengthCourse)
 
     console.log('Declare event listeners .......................')
 
     document.getElementById('clicker').addEventListener('click', function () {
-      const s = document.getElementById('guest').value
+      const s = document.getElementById('courseName').value
       const i = parseInt(document.getElementById('firstNumber').value)
       console.log('i=' + i)
-      const j = parseInt(document.getElementById('secondNumber').value)
-      console.log('j=' + j)
-      const ans = s + ', your sum is ' + add(i, j) + '.'
+      const sLen = s.length;
+      const ans = 'You have: ' + lengthCourse(sLen, i) + ' characters left.'
       document.getElementById('result').innerHTML = ans
     })
 
